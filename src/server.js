@@ -5,6 +5,7 @@ const morgan = require('morgan');
 const servicesRoutes = require('./routes/services');
 const statusRoutes = require('./routes/status');
 const loggerMiddleware = require('./middleware/logger');
+const { securityHeaders, requestLimiter } = require('./middleware/security');
 
 // Initialisation de l'application Express
 const app = express();
@@ -16,6 +17,8 @@ app.use(express.json()); // Parse les requêtes JSON
 app.use(express.urlencoded({ extended: true })); // Parse les données de formulaire
 app.use(morgan('dev')); // Logging des requêtes HTTP
 app.use(loggerMiddleware); // Notre middleware de logging personnalisé
+app.use(securityHeaders); // Ajoute des en-têtes de sécurité
+app.use(requestLimiter); // Limite le nombre de requêtes
 
 // Servir les fichiers statiques
 app.use(express.static(path.join(__dirname, '../public')));
@@ -38,14 +41,10 @@ app.use((err, req, res, next) => {
   });
 });
 
-// Démarrage du serveur
-app.listen(PORT, () => {
-  console.log(`Serveur démarré sur http://localhost:${PORT}`);
-});
 // Démarrage du serveur (seulement si le fichier est exécuté directement)
 if (require.main === module) {
   app.listen(PORT, () => {
-    console.log(`Serveur démarré sur http://localhost:${PORT}`);
+    console.info(`Serveur démarré sur http://localhost:${PORT}`);
   });
 }
 
