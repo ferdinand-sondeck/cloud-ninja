@@ -42,5 +42,11 @@ app.use((err, req, res, next) => {
 app.listen(PORT, () => {
   console.log(`Serveur démarré sur http://localhost:${PORT}`);
 });
+// Démarrage du serveur (seulement si le fichier est exécuté directement)
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`Serveur démarré sur http://localhost:${PORT}`);
+  });
+}
 
 module.exports = app; // Pour les tests
