@@ -5,12 +5,12 @@
   "main": "src/server.js",
   "type": "module",
   "scripts": {
-  "start": "node src/server.js",
-  "dev": "nodemon src/server.js",
-  "test": "jest",
-  "test:coverage": "jest --coverage",
-  "lint": "eslint ."
-},
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint ."
+  },
   "keywords": [
     "nodejs",
     "express",
@@ -30,6 +30,8 @@
     "eslint": "^9.29.0",
     "eslint-plugin-jest": "^28.14.0",
     "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^7.2.1",
+    "eslint-plugin-security": "^3.0.1",
     "jest": "^30.0.0",
     "nodemon": "^2.0.22",
     "supertest": "^7.1.1"
