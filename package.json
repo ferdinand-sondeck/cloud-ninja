@@ -1,0 +1,29 @@
+{
+  "name": "cloud-ninja-services",
+  "version": "1.0.0",
+  "description": "Application web pour consulter le catalogue des services de CloudNinja Corp",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "api",
+    "rest",
+    "cloudninja"
+  ],
+  "author": "Votre Nom",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "morgan": "^1.10.0",
+    "joi": "^17.9.2",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
