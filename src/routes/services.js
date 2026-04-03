@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const Joi = require('joi');
 
 // Liste des services (simulée pour l'instant)
 const services = [
@@ -40,13 +39,6 @@ technologies DevOps et Cloud`,
     price: 'À partir de 1200€/session' 
   }
 ];
-
-// Schéma de validation pour les requêtes de recherche
-const querySchema = Joi.object({
-  name: Joi.string().min(2).max(100),
-  minPrice: Joi.number().min(0),
-  maxPrice: Joi.number().min(0)
-});
 
 // GET /api/services - Récupérer tous les services
 router.get('/', (req, res) => {

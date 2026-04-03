@@ -1,11 +1,11 @@
 // eslint.config.js
-export default [
+module.exports = [
   {
     ignores: ['node_modules/', 'public/', 'dist/'],
     files: ['**/*.js'],
     languageOptions: {
       ecmaVersion: 'latest',
-      sourceType: 'module'
+      sourceType: 'commonjs'
     },
     rules: {
       semi: ['error', 'always'],
